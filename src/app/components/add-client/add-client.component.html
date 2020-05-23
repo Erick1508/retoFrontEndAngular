@@ -4,21 +4,24 @@
         <form (ngSubmit)="onSaveClient(formNew)" #formNew="ngForm" class="col s6">
             <div class="row">
                 <div class="input-field col s6">
-                    <input [(ngModel)]="client.name" #name="ngModel" type="text" name="name" id="name" placeholder="Nombre" required>
                     <label>Nombre</label>
+                    <input [(ngModel)]="client.name" #name="ngModel" type="text" name="name" id="name" placeholder="Nombre" required>
                 </div>
                 <div class="input-field col s6">
                     <input [(ngModel)]="client.lastname" #lastname="ngModel" type="text" name="lastname" id="lastname" placeholder="Apellido" required>
                     <label>Apellido</label>
                 </div>
                 <div class="input-field col s6">
-                    <input [(ngModel)]="client.age" #age="ngModel" type="number" name="age" id="age" placeholder="Edad" required>
+                    <input [(ngModel)]="client.age" #age="ngModel" type="number" name="age" id="age" min=0 value=0 required>
                     <label>Edad</label>
                 </div>
                 <div class="input-field col s6">
                     <input [(ngModel)]="client.birthday" #birthday="ngModel" type="date" name="birthday" id="birthday" placeholder="Fecha de nacimiento" required>
                     <label>Fecha de nacimiento:</label>
                 </div>
+                <div class="left">
+                    <a class="btn blue" routerLink="/">Volver</a>
+                </div>                
                 <button type="submit" class="btn waves-effect wave-light green right">
                     Crear
                 </button>

@@ -4,4 +4,5 @@ export interface ClientInterface {
     lastname?: string;
     birthday?: Date;
     age?: number;
+    deathDate?: Date;
 }

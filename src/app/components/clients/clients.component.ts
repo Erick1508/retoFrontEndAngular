@@ -21,6 +21,12 @@ export class ClientsComponent implements OnInit {
       let acumDS: number = 0;
       for(let i= 0; i < this.clients.length; i++){
         acum += this.clients[i].age;
+        let date = new Date(this.clients[i].birthday+'T00:00:00');
+        this.clients[i].deathDate = 
+         new Date(date.getFullYear() + 80,
+                  date.getMonth(),
+                  date.getDate());
+        
       }
       if (this.clients.length != 0){
         this.avegareAge = acum/this.clients.length;
